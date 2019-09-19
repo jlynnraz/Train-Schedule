@@ -1,0 +1,20 @@
+form,
+.table{
+   max-width: 70%;
+   margin:0 auto;
+    border:2px solid darkslategray;
+}
+tr:nth-child(+2){
+    background:lightgray;
+}
+form{
+    margin-top: 2rem;
+    }
+
+.form-group{
+    max-width: 70%;
+    margin:auto;
+}    
+button{
+    margin:auto;
+}
