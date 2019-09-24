@@ -12,16 +12,16 @@ var firebaseConfig = {
   
   var database = firebase.database();
   
-  var database = firebase.database();
+  
   
   $("#submit").on("click", function (event) {
       event.preventDefault();
       console.log(event);
   
       var name = $("#name").val().trim();
-      var dest = $("#dest").val().trim();
-      var firstTrain = $(" firstTrain").val().trim();
-      var freq = $(" freq").val().trim();
+      var dest = $("#dest").val();
+      var firstTrain = $("#firstTrain").val().trim();
+      var freq = $("#freq").val().trim();
   
       database.ref().push({
           name: name,
@@ -40,21 +40,27 @@ var firebaseConfig = {
       var tDest = childSnapshot.val().dest;
       var tfirstTrain = childSnapshot.val().firstTrain;
       var tFreq = childSnapshot.val().freq;
-        var tRemainder = 0;
-        var minsAway = 0;
-        var startConverted = moment(childSnapshot.val().start, "HH:mm").subtract(1, "days");
-
-
+      var startConverted = moment(tfirstTrain, "HH:mm").subtract(1, "days");
+      var diffTime = moment().diff(moment(startConverted), "minutes")
+      var tRemainder = diffTime % tFreq;
+        var tMinAway = tFreq - tRemainder
+        var nextTrain = moment().add(tMinAway, "minutes").format("HH:mm")
     
 
       $("#table").append($("<tr>").append(
-          $("<td>").text(childSnapshot.val().name),
-          $("<td>").text(childSnapshot.val().dest),
-          $("<td>").text(childSnapshot.val().firstTrain),
-          $("<td>").text(childSnapshot.val().freq),
+          $("<td>").text(tName),
+          $("<td>").text(tDest),
+          $("<td>").text(tFreq),
+          $("<td>").text(nextTrain),
+          $("<td>").text(tMinAway),
+
 
           ))
+          console.log("MINUTES TILL TRAIN: " + tMinAway);
       console.log(name);
+      console.log(dest);
+      console.log(firstTrain);
+      console.log(freq);
 
 
   });

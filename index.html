@@ -23,12 +23,20 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- Moment CDN -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 
 
 </head>
 
 <body>
-
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Train Schedule</h1>
+ 
+    </div>
+  </div>
 
   <table class="table" id="table">
     <thead>
@@ -42,21 +50,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      
     </tbody>
   </table>
 
@@ -66,16 +60,16 @@
       <input type="text" class="form-control" id="name">
     </div>
     <div class="form-group">
-      <label for="role">Destination</label>
-      <input type="text" class="form-control" id="role">
+      <label for="dest">Destination</label>
+      <input type="text" class="form-control" id="dest">
     </div>
     <div class="form-group">
-      <label for="start">First Train Time (HH:mm - Military Time)</label>
-      <input type="text" class="form-control" id="start">
+      <label for="firstTrain">First Train Time (HH:mm - Military Time)</label>
+      <input type="text" class="form-control" id="firstTrain">
     </div>
     <div class="form-group">
-      <label for="rate">Frequency (min)</label>
-      <input type="text" class="form-control" id="rate">
+      <label for="freq">Frequency (min)</label>
+      <input type="text" class="form-control" id="freq">
     </div>
     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
   </form>
