@@ -7,9 +7,9 @@ Train Scheduler was designed to promote basic CRUD (Create, Remove, Update, Dele
 ## Sneak Peak
 
 ## Installation
-Fork It
-Clone It
-NPM Install Firebase
+* Fork It
+* Clone It
+* NPM Install Firebase
 
 ## Technologies
 * JavaScript 
